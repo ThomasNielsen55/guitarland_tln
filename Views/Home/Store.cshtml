@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Lessons";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome to guitarland</h1>
+    <p>Learn about my guitar journey and learn how you can progress on your own.</p>
+</div>
+
+<div class="text-container">
+    <label for="hours">Enter Number of Hours:</label>
+    <input type="number" id="hours" placeholder="Enter hours" min="0">
+
+    <br />
+    <label>Hourly Rate:</label>
+    <input type="text" id="hourlyRate" value="$20" readonly>
+
+    <button id="calculateButton">Calculate Total</button>
+
+    <div class="output" id="totalOutput"></div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#calculateButton").click(function () {
+            var hours = parseFloat($("#hours").val());
+            var hourlyRate = parseFloat($("#hourlyRate").val().replace('$', ''));
+            var total = hours * hourlyRate;
+            $("#totalOutput").text("Total: $" + total.toFixed(2));
+        });
+    });
+</script>
+
+<div class="image-row">
+    <div class="image-block">
+		<img src="~/images/newbass.jpeg">
+    </div>
+    <div class="image-block">
+		<img src="~/images/accoustic.jpg">
+    </div>
+</div>
+<div class="image-row">
+    <div class="image-block">
+        <img src="~/images/pihs.jpg">
+    </div>
+    <div class="image-block">
+		<img src="~/images/home.png">
+	</div>
+</div>
